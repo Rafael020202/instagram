@@ -7,4 +7,5 @@ const router = Router();
 
 router.post('/', createUserValitdator, userController.create);
 
+
 export default router;
