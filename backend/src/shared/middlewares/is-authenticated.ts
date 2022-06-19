@@ -3,7 +3,7 @@ import { inject, injectable } from "tsyringe";
 
 import AppError from '../errors/app-error';
 import authConfig from '@config/auth-config';
-import { ITokenProvider } from '@modules/user/providers/token-provider/protocol';
+import ITokenProvider from '@modules/user/providers/token-provider/protocol';
 
 
 @injectable()

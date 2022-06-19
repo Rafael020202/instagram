@@ -4,7 +4,7 @@ import IHashProvider from './hash-provider/protocol';
 import Bcrypt from './hash-provider/implementation/bcrypt';
 
 import JsonWebToken from './token-provider/implementation/json-web-token';
-import { ITokenProvider } from './token-provider/protocol';
+import ITokenProvider from './token-provider/protocol';
 
 import Uuid from './uniqueid-generator-provider/implementation/uuid';
 import IUniqueIdGenerator from './uniqueid-generator-provider/protocol';

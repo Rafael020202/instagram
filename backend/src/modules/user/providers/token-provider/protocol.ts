@@ -7,7 +7,7 @@ export interface ITokenPayload {
     sub: string;
 };
 
-export interface ITokenProvider {
+export default interface ITokenProvider {
   sign(secret: string, options: ISignOptions): string;
   verify(token: string, secret: string): ITokenPayload;
 }

@@ -1,5 +1,6 @@
 import { sign, verify } from 'jsonwebtoken';
-import { ITokenProvider, ISignOptions, ITokenPayload } from '../protocol';
+import { ISignOptions, ITokenPayload } from '../protocol';
+import ITokenProvider from '../protocol';
 
 class JsonWebToken implements ITokenProvider {
   sign (secret: string, options: ISignOptions): string {
