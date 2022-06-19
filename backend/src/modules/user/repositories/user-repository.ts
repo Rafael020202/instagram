@@ -1,5 +1,5 @@
 import createUserDto  from '../dto/create-user-dto';
-import User from '../infra/databse/entities/User';
+import User from '../infra/databse/entities/user';
 
 interface IUserRepository {
   create(data: createUserDto): Promise<void>;

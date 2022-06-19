@@ -1,7 +1,7 @@
 import MongoDb from "@shared/infra/database/mongodb";
 import CreateUserDto from "../../../../dto/create-user-dto";
 import IUserRepository from "../../../../repositories/user-repository";
-import User from "../../entities/User";
+import User from "../../entities/user";
 
 class UserRepository implements IUserRepository {
   constructor(
