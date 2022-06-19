@@ -3,10 +3,11 @@ import 'reflect-metadata';
 import '../shared/injections';
 import 'express-async-errors';
 
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import { errors } from 'celebrate';
+
+import ErrorHandler from './middlewares/error-handler';
 import routes from './infra/http/routes';
-import AppError from './errors/app-error';
 import { config } from 'dotenv';
 import logger from './utils/logger';
 
@@ -18,13 +19,7 @@ server.use(express.json());
 server.use(routes);
 
 server.use(errors());
-server.use((err: Error, _: Request, res: Response, __: any) => {
-  if (err instanceof AppError) {
-    return res.status(err.status).json({ message: err.message });
-  }
-
-  return res.status(500).json(err);
-});
+server.use(ErrorHandler.execute);
 
 const port = process.env.PORT || 3000;
 
