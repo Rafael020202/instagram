@@ -8,4 +8,4 @@ import IUserRepository from "@modules/user/repositories/user-repository";
 import "@modules/user/providers";
 
 container.registerSingleton<IUserRepository>('UserRepository', UserRepository);
-container.registerSingleton('MongoDb', MongoDb);
+container.registerSingleton<MongoDb>('MongoDb', MongoDb);

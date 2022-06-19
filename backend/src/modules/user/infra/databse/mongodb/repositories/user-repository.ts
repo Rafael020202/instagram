@@ -1,11 +1,15 @@
+import { inject, injectable } from "tsyringe";
+
 import MongoDb from "@shared/infra/database/mongodb";
 import CreateUserDto from "../../../../dto/create-user-dto";
 import IUserRepository from "../../../../repositories/user-repository";
 import User from "../../entities/user";
 
+@injectable()
 class UserRepository implements IUserRepository {
   constructor(
-    private mongodb = new MongoDb()
+    @inject('MongoDb')
+    private mongodb: MongoDb
   ) {}
 
   public async create (data: CreateUserDto): Promise<void> {
