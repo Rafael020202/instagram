@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import IUniqueGenerator from '../uniqueid-generator';
+import IUniqueGenerator from '../protocol';
 
 class Uuid implements IUniqueGenerator {
     public generate(): string {
