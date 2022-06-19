@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import 'reflect-metadata';
 import '../shared/injections';
 import 'express-async-errors';
@@ -6,7 +7,9 @@ import express, { Request, Response, NextFunction } from 'express';
 import { errors } from 'celebrate';
 import routes from './infra/http/routes';
 import AppError from './errors/app-error';
+import { config } from 'dotenv';
 
+config();
 
 const server = express();
 
