@@ -5,7 +5,15 @@ class MongoDb {
 
   private async getConnection(): Promise<MongoClient> {
     if(!this.connection) {
-      this.connection = await MongoClient.connect('mongodb://root:root@localhost:27107/admin');
+      const { 
+        MONGO_USERNAME: username, 
+        MONGO_PASSWORD: password, 
+        MONGO_HOST: host,
+        MONGO_PORT: port,
+        MONGO_DB: db
+      } = process.env; 
+
+      this.connection = await MongoClient.connect(`mongodb://${username}:${password}@${host}:${port}/${db}`);
     }
 
     return this.connection;
