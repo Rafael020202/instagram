@@ -11,5 +11,6 @@ export const createUserValitdator = celebrate({
     [Segments.BODY]: Joi.object().keys({
       name: Joi.string().required(),
       password: Joi.string().required(),
+      nickname: Joi.string().required(),
       email: Joi.string().email().required()
   })});

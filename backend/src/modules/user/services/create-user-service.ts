@@ -17,10 +17,15 @@ class CreateUserService {
   ) {}
 
   public async execute(data: createUserDto) {
-    const [user] = await this.userRepository.find({ email: data.email });
+    const [user] = await this.userRepository.find({ 
+      email: data.email,
+      nickname: data.nickname 
+    });
 
     if (user) {
-      throw new AppError('Usuário já existe');
+      const field = data.email === user.email ?'e-mail' :'nickname';
+    
+      throw new AppError(`Já existe um usuário com mesmo ${field}`);
     }
 
     data.password = await this.hashProvider.hash(data.password);
