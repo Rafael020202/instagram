@@ -30,7 +30,7 @@ class CreateUserService {
   ) {}
 
   public async execute(data: createSessionDto): Promise<IResponse> {
-    const user = await this.userRepository.find({ filters: { email: data.email } });
+    const [user] = (await this.userRepository.find({ email: data.email }));
 
     if (!user) {
       throw new AppError('Usuário não encontrado');

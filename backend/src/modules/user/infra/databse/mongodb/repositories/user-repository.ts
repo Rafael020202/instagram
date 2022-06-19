@@ -1,6 +1,5 @@
 import MongoDb from "@shared/infra/database/mongodb";
 import CreateUserDto from "../../../../dto/create-user-dto";
-import FindUserDto from "../../../../dto/find-user-dto";
 import IUserRepository from "../../../../repositories/user-repository";
 import User from "../../entities/User";
 
@@ -15,13 +14,16 @@ class UserRepository implements IUserRepository {
     await usersCollection.insertOne(data);
   }
 
-  public async find (data: FindUserDto): Promise<User | null> {
-    const usersCollection = await this.mongodb.getCollection('users')
-    const user = await usersCollection.findOne({...data.filters}) as any;
+  public async find (filter: any): Promise<User[]> {
+    const usersCollection = await this.mongodb.getCollection('users');
+    const filters: any[] = [];
     
-    if (!user) return null;
+    Object.keys(filter).forEach((key) => filters.push({[key]: filter[key]}));
 
-    return new User(user);
+    const result = await usersCollection.find({$or: [...filters]});
+    const users: User[] = (await result.toArray()) as [];
+
+    return users;
   }
 }
 

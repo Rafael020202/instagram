@@ -17,9 +17,9 @@ class CreateUserService {
   ) {}
 
   public async execute(data: createUserDto) {
-    const userExists = await this.userRepository.find({ filters: { email: data.email } });
+    const [user] = await this.userRepository.find({ email: data.email });
 
-    if (userExists) {
+    if (user) {
       throw new AppError('Usuário já existe');
     }
 
