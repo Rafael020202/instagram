@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { SessionController } from '../controllers'
-import { createSessionValitdator } from '../validators'
+import { SessionController } from '../../controllers'
+import { createSessionValitdator } from '../../validators'
 
 const sessionController = new SessionController();
 const router = Router();
