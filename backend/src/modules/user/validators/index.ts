@@ -12,5 +12,6 @@ export const createUserValitdator = celebrate({
       name: Joi.string().required(),
       password: Joi.string().required(),
       nickname: Joi.string().required(),
+      description: Joi.string().required(),
       email: Joi.string().email().required()
   })});

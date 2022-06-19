@@ -4,6 +4,8 @@ class User {
   name: string;
   email: string;
   nickname: string;
+  description: string;
+  pic?: string;
   password: string;
   created_at: Date;
   updated_at: Date;
