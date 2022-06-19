@@ -15,6 +15,9 @@
         "@modules/*": ["modules/*"],
         "@shared/*": ["shared/*"],
         "@config/*": ["config/*"] 
-      },      
+    },
+    "typeRoots": [
+        "./src/shared/@types"
+    ]
   }
 }
