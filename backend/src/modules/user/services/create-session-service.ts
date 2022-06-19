@@ -2,8 +2,8 @@ import { inject, injectable } from "tsyringe";
 import AppError from "@shared/errors/app-error";
 import createSessionDto from "../dto/create-session-dto";
 import IUserRepository from "../repositories/user-repository";
-import IHashProvider from "../providers/HashProvider/IHashProvider";
-import { ITokenProvider } from "../providers/TokenProvider/ITokenProvider";
+import IHashProvider from "../providers/hash-provider/hash-provider";
+import { ITokenProvider } from "../providers/token-provider/token-provider";
 import authConfig from "@config/auth-config";
 
 interface IResponse {

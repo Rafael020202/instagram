@@ -1,8 +1,8 @@
 import { inject, injectable } from "tsyringe";
 import AppError from "@shared/errors/app-error";
 import createUserDto from "../dto/create-user-dto";
-import IHashProvider from "../providers/HashProvider/IHashProvider";
-import IUniqueIdGenerator from "../providers/UniqueIdGeneratorProvider/IUniqueIdGenerator";
+import IHashProvider from "../providers/hash-provider/hash-provider";
+import IUniqueIdGenerator from "../providers/uniqueid-generator-provider/uniqueid-generator";
 import IUserRepository from "../repositories/user-repository";
 
 @injectable()

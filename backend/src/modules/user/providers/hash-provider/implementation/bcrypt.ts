@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import IHashProvider from '../IHashProvider';
+import IHashProvider from '../protocol';
 
 class Bcrypt implements IHashProvider {
   async hash (data: string): Promise<string> {
