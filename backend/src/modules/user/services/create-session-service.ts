@@ -1,10 +1,10 @@
 import { inject, injectable } from "tsyringe";
-import AppError from "../../../shared/errors/app-error";
+import AppError from "@shared/errors/app-error";
 import createSessionDto from "../dto/create-session-dto";
 import IUserRepository from "../repositories/user-repository";
 import IHashProvider from "../providers/HashProvider/IHashProvider";
 import { ITokenProvider } from "../providers/TokenProvider/ITokenProvider";
-import authConfig from "../../../config/auth-config";
+import authConfig from "@config/auth-config";
 
 interface IResponse {
   user: {

@@ -1,4 +1,4 @@
-import MongoDb from "../../../../../../shared/infra/database/mongodb";
+import MongoDb from "@shared/infra/database/mongodb";
 import CreateUserDto from "../../../../dto/create-user-dto";
 import FindUserDto from "../../../../dto/find-user-dto";
 import IUserRepository from "../../../../repositories/user-repository";

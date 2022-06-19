@@ -2,8 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import { inject, injectable } from "tsyringe";
 
 import AppError from '../errors/app-error';
-import authConfig from '../../config/auth-config';
-import { ITokenProvider } from '../../modules/user/providers/TokenProvider/ITokenProvider';
+import authConfig from '@config/auth-config';
+import { ITokenProvider } from '@modules/user/providers/TokenProvider/ITokenProvider';
 
 
 @injectable()
