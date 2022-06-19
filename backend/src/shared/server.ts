@@ -8,6 +8,7 @@ import { errors } from 'celebrate';
 import routes from './infra/http/routes';
 import AppError from './errors/app-error';
 import { config } from 'dotenv';
+import logger from './utils/logger';
 
 config();
 
@@ -28,5 +29,5 @@ server.use((err: Error, _: Request, res: Response, __: any) => {
 const port = process.env.PORT || 3000;
 
 server.listen(port, () => {
-  console.log('test');
+  logger.info(`api up and running on port ${port}`);
 });
